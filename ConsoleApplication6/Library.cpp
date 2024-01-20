@@ -11,12 +11,12 @@ void Library::removeBook(const string& author, const string& title) {
     for (auto it = range.first; it != range.second; ++it) {
         if (it->second.title == title) {
             books.erase(it);
-            cout << "Êíèãà óñïåøíî óäàëåíà.\n";
+            cout << "ÐšÐ½Ð¸Ð³Ð° ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑƒÐ´Ð°Ð»ÐµÐ½Ð°.\n";
             return;
         }
     }
 
-    cerr << "Îøèáêà: Êíèãà íå íàéäåíà äëÿ óäàëåíèÿ.\n";
+    cerr << "ÐžÑˆÐ¸Ð±ÐºÐ°: ÐšÐ½Ð¸Ð³Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð° Ð´Ð»Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ.\n";
 }
 
 void Library::displayBooksByAuthor() {
@@ -54,10 +54,10 @@ void Library::saveToFile(const string& filename) {
             file << book.author << ',' << book.title << ',' << book.year << ',' << book.copies << '\n';
         }
         file.close();
-        cout << "Äàííûå ñîõðàíåíû â ôàéë.\n";
+        cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð».\n";
     }
     else {
-        cerr << "Íå óäàëîñü îòêðûòü ôàéë äëÿ ñîõðàíåíèÿ äàííûõ.\n";
+        cerr << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ….\n";
     }
 }
 
@@ -79,14 +79,14 @@ void Library::loadFromFile(const string& filename) {
                 addBook(Book(author, title, year, copies));
             }
             else {
-                cerr << "Îøèáêà ïðè ÷òåíèè äàííûõ èç ôàéëà.\n";
+                cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ñ‡Ñ‚ÐµÐ½Ð¸Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°.\n";
             }
         }
 
         file.close();
-        cout << "Äàííûå çàãðóæåíû èç ôàéëà.\n";
+        cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð·Ð°Ð³Ñ€ÑƒÐ¶ÐµÐ½Ñ‹ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°.\n";
     }
     else {
-        cerr << "Íå óäàëîñü îòêðûòü ôàéë äëÿ çàãðóçêè äàííûõ.\n";
+        cerr << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸ Ð´Ð°Ð½Ð½Ñ‹Ñ….\n";
     }
 }
